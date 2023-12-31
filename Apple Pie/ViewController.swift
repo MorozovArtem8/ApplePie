@@ -2,17 +2,31 @@ import UIKit
 
 class ViewController: UIViewController {
     var currentGame: Game!
-    var listOfWirds = ["buccaneer", "swift", "glorious",
+    var listOfWords = ["buccaneer", "swift", "glorious",
                        "incandescent", "bug", "program"]
     let incorrectMovesAllowed = 7
     var totalWins = 0 {
         didSet{
-            newRound()
+            enableLetterButtons(false)
+            resultLabel.isHidden = false
+            resultLabel.text = "Successfully"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.enableLetterButtons(true)
+                self.newRound()
+                self.resultLabel.isHidden = true
+            }
         }
     }
     var totalLosses = 0 {
         didSet{
-            newRound()
+            enableLetterButtons(false)
+            resultLabel.isHidden = false
+            resultLabel.text = "You lose"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.enableLetterButtons(true)
+                self.newRound()
+                self.resultLabel.isHidden = true
+            }
         }
     }
     
@@ -21,17 +35,31 @@ class ViewController: UIViewController {
     @IBOutlet var correctWordLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
+    @IBOutlet var resultLabel: UILabel!
     
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        resultLabel.isHidden = true
         newRound()
     }
     
     func newRound () {
-        let newWrod = listOfWirds.removeFirst()
-        currentGame = Game(word: newWrod, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
-        updateUI()
+        if !listOfWords.isEmpty{
+            let newWord = listOfWords.removeFirst()
+            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+            enableLetterButtons(true)
+            updateUI()
+        }else{
+            correctWordLabel.isHidden = true
+            enableLetterButtons(false)
+        }
+    }
+    
+    func enableLetterButtons(_ enable: Bool) {
+        for button in letterButtons {
+            button.isEnabled = enable
+        }
     }
     
     func updateUI() {
@@ -50,6 +78,7 @@ class ViewController: UIViewController {
             totalLosses += 1
         }else if currentGame.word == currentGame.formattedWord {
             totalWins += 1
+            updateUI()
         }else{
             updateUI()
         }
