@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4DD7FC09-5F6E-44C4-BACE-065DEE3CA6D4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04816B46-2CEB-4839-B593-744A02EECC11"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Apple Pie/Game.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "formattedWord"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "04816B46-2CEB-4839-B593-744A02EECC11 - 6e1a03f532aacff2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Apple_Pie.Game.formattedWord.getter : Swift.String"
+                  moduleName = "Apple Pie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Artem/Desktop/Project/Apple%20Pie/Apple%20Pie/Game.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "04816B46-2CEB-4839-B593-744A02EECC11 - 6e1a03f532aacff2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Apple_Pie.Game.formattedWord.getter : Swift.String"
+                  moduleName = "Apple Pie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Artem/Desktop/Project/Apple%20Pie/Apple%20Pie/Game.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "800">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
